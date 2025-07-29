@@ -46,7 +46,20 @@
         </div>
       </form>
     </section>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Promise.all([
+                fetch("header.html").then(res => res.text()),
+                fetch("footer.html").then(res => res.text())
+            ])
+                .then(([headerContent, footerContent]) => {
+                    document.getElementById("header").innerHTML = headerContent;
+                    document.getElementById("footer").innerHTML = footerContent;
+                })
+                .catch(err => console.error("Error al cargar header o footer:", err));
+        });
+    </script>
+    <script src="/js/componente.js"></script>
   </main>
 </html>
 <footer class="footer">
