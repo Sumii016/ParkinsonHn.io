@@ -28,54 +28,48 @@
             </ul>
         </nav>
     </header>
-    <div id="header"></div>
-    <section class="container contacto-formulario">
-        <div class="row">
-            <div class="col-12">
-                <h2 class="titulo-seccion">Contáctenos</h2>
+      <section class="container contacto-formulario">
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="titulo-seccion">Contáctenos</h2>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6 offset-3">
-                <form action="https://formsubmit.co/michirodri123@gmail" method="POST" i>
-                    <label for="txtNombre">Nombre completo:</label>
-                    <input id="txtNombre" name="nombre" placeholder="Juan Pérez García" required="" type="text" />
-                    <label for="txtEmail">Correo electrónico:</label>
-                    <input id="txtEmail" name="email" placeholder="juanG@gmail.com" required="" type="email" />
-                    <label for="txtTelefono">Teléfono</label>
-                    <input id="txtTelefono" name="telefono" placeholder="9876-5432" required="" type="tel" />
-                    <label for="interes">Motivo</label>
-                    <select id="Motivo" name="Motivo">
-                        <option value="consulta">Consulta general</option>
-                        <option value="donacion">Donación</option>
-                        <option value="voluntario">Voluntariado</option>
-                        <option value="parkinson">Síntomas del Parkinson</option>
-                        <option value="otros">Otros</option>
-                    </select>
-                    <label for="txtMensaje">Mensaje:</label>
-                    <textarea id="txtMensaje" maxlength="1024" name="mensaje" placeholder="Escriba su mensaje"
-                        required="" rows="8"></textarea>
-                    <div class="error" id="errorContainer"></div>
-                    <button type="submit">Enviar Mensaje</button>
-                </form>
-            </div>
-        </div>
-    </section>
+            <div class="row">
+                <div class="col-6 offset-3">
+                    <form action="https://formsubmit.co/parkinsonhonduras@gmail.com" method="POST" class="container-md">
+                        <input type="hidden" name="_captcha" value="false">
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            Promise.all([
-                fetch("header.html").then(res => res.text()),
-                fetch("footer.html").then(res => res.text())
-            ])
-                .then(([headerContent, footerContent]) => {
-                    document.getElementById("header").innerHTML = headerContent;
-                    document.getElementById("footer").innerHTML = footerContent;
-                })
-                .catch(err => console.error("Error al cargar header o footer:", err));
-        });
-    </script>
-    <script src="/js/componente.js"></script>
+                        <label for="txtNombre">Nombre completo:</label>
+                        <input id="txtNombre" name="nombre" placeholder="Juan Pérez García" required type="text" />
+
+                        <label for="txtEmail">Correo electrónico:</label>
+                        <input id="txtEmail" name="email" placeholder="juanG@gmail.com" required type="email" />
+
+                        <label for="txtTelefono">Teléfono</label>
+                        <input id="txtTelefono" name="telefono" placeholder="9876-5432" required type="tel" />
+
+                        <label for="Motivo">Motivo</label>
+                        <select id="Motivo" name="Motivo">
+                            <option value="consulta">Consulta general</option>
+                            <option value="donacion">Donación</option>
+                            <option value="voluntario">Voluntariado</option>
+                            <option value="parkinson">Síntomas del Parkinson</option>
+                            <option value="otros">Otros</option>
+                        </select>
+
+                        <label for="txtMensaje">Mensaje:</label>
+                        <textarea id="txtMensaje" maxlength="1024" name="mensaje" placeholder="Escriba su mensaje" required rows="8"></textarea>
+
+                        <div class="error" id="errorContainer"></div>
+
+                        <div class="btn-container">
+                            <button type="submit">Enviar Mensaje</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
 
 </html>
 <footer class="footer">

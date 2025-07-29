@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <title>Parkinson Honduras</title>
@@ -38,27 +37,36 @@
         </div>
         <div class="row">
             <div class="col-6 offset-3">
-                <form action="contactenos.html">
-                    <label for="txtNombre">Nombre completo:</label>
-                    <input id="txtNombre" name="nombre" placeholder="Juan Pérez García" required="" type="text" />
-                    <label for="txtEmail">Correo electrónico:</label>
-                    <input id="txtEmail" name="email" placeholder="juanG@gmail.com" required="" type="email" />
-                    <label for="txtTelefono">Teléfono</label>
-                    <input id="txtTelefono" name="telefono" placeholder="9876-5432" required="" type="tel" />
-                    <label for="interes">Motivo</label>
-                    <select id="Motivo" name="Motivo">
-                        <option value="consulta">Consulta general</option>
-                        <option value="donacion">Donación</option>
-                        <option value="voluntario">Voluntariado</option>
-                        <option value="parkinson">Síntomas del Parkinson</option>
-                        <option value="otros">Otros</option>
-                    </select>
-                    <label for="txtMensaje">Mensaje:</label>
-                    <textarea id="txtMensaje" maxlength="1024" name="mensaje" placeholder="Escriba su mensaje"
-                        required="" rows="8"></textarea>
-                    <div class="error" id="errorContainer"></div>
-                    <button type="submit">Enviar Mensaje</button>
-                </form>
+                    <form action="https://formsubmit.co/michirodri123@gmail.com" method="POST" class="container-md">
+    <input type="hidden" name="_captcha" value="false">
+    
+    <label for="txtNombre">Nombre completo:</label>
+    <input id="txtNombre" name="nombre" placeholder="Juan Pérez García" required type="text" />
+    
+    <label for="txtEmail">Correo electrónico:</label>
+    <input id="txtEmail" name="email" placeholder="juanG@gmail.com" required type="email" />
+    
+    <label for="txtTelefono">Teléfono</label>
+    <input id="txtTelefono" name="telefono" placeholder="9876-5432" required type="tel" />
+    
+    <label for="Motivo">Motivo</label>
+    <select id="Motivo" name="Motivo">
+        <option value="consulta">Consulta general</option>
+        <option value="donacion">Donación</option>
+        <option value="voluntario">Voluntariado</option>
+        <option value="parkinson">Síntomas del Parkinson</option>
+        <option value="otros">Otros</option>
+    </select>
+    
+    <label for="txtMensaje">Mensaje:</label>
+    <textarea id="txtMensaje" maxlength="1024" name="mensaje" placeholder="Escriba su mensaje" required rows="8"></textarea>
+    
+    <div class="error" id="errorContainer"></div>
+    
+    <div class="btn-container">
+        <button type="submit">Enviar Mensaje</button>
+    </div>
+</form>
             </div>
         </div>
     </section>
@@ -78,7 +86,7 @@
     <script src="/js/componente.js"></script>
 </html>
 <footer class="footer">
-  <p>&copy;ASHPARK Todos los derechos reservados.</p>
+  <p>&copy; ASHPARK Todos los derechos reservados.</p>
 </footer>
 </body>
 </html>
