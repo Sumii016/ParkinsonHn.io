@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Parkinson Honduras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-content">
+    <header>
+        <section>
+            <img src="Imagenes/Logo.jpg" alt="Logo">
+            <h1>ASHPARK</h1>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="acercaN.html">Acerca de Nosotros</a></li>
+                <li><a href="programas.html">Nuestros Programas</a></li>
+                <li><a href="ayuda.html">Cómo Ayudar</a></li>
+                <li><a href="Galeria.html">Galería de Fotos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contactenos.html">Contáctenos</a></li>
+                <li><a href="donaciones.html">Página de Donaciones</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <div class="carousel">
+    <div class="slides">
+      <div class="slide active">
+        <img src="/Imagenes/Imagen1.jpg" alt="Imagen 1">
+      </div>
+      <div class="slide">
+        <img src="/Imagenes/Imagen2.jpg" alt="Imagen 2">
+      </div>
+      <div class="slide">
+        <img src="/Imagenes/Imagen3.jpg" alt="Imagen 3">
+      </div>
+    </div>
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+  </div>
+
+  <section class="bienvenida-seccion">
+  <div class="bienvenida-contenido">
+    <h1>Bienvenido a la Asociación Hondureña de Parkinson</h1>
+    <p> Somos una organización comprometida con brindar apoyo, información y esperanza a las 
+      personas que viven con la Enfermedad de Parkinson en Honduras. Desde nuestros inicios, 
+      trabajamos por crear una comunidad más consciente, empática y solidaria.</p>
+    <p> Si desea colaborar con nuestra causa, le invitamos a visitar la sección
+      <strong>“Cómo Ayudar”</strong> o dirigirse directamente a la <strong>Página de Donaciones</strong>. 
+      Su apoyo es fundamental para continuar brindando asistencia a quienes más lo necesitan.</p>
+    <p> Gracias por formar parte de este esfuerzo. Explore el menú de navegación en la parte superior 
+      para conocer más sobre nosotros, descubrir nuestros programas, o ponerse en contacto. Juntos, 
+      construimos una Honduras más informada y humana frente al Parkinson.</p>
+  </div>
+</section>
+
+  <script src="/js/componente.js"></script>
+  <script>
+    fetch("header.html").then(res => res.text()).then(data => {
+      document.getElementById("header").innerHTML = data;
+    });
+    fetch("footer.html").then(res => res.text()).then(data => {
+      document.getElementById("footer").innerHTML = data;
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const next = document.querySelector('.next');
+    const prev = document.querySelector('.prev');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        if (i === index) slide.classList.add('active');
+      });
+    }
+
+    next.addEventListener('click', () => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    prev.addEventListener('click', () => {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    });
+
+    showSlide(currentSlide);
+  </script>
+
+<footer class="footer">
+  <p>&copy;ASHPARK Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
