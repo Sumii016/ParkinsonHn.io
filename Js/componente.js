@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Carrusel (slider)
     setTimeout(() => {
       const slides = document.querySelectorAll(".slide");
       const prevBtn = document.querySelector(".prev");
