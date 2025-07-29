@@ -128,7 +128,7 @@ header nav ul li a:hover {
   padding: 16px 22px;
   cursor: pointer;
   font-size: 36px;
-  border-radius: 0px;           /* Sin bordes redondos */
+  border-radius: 0px;           
   z-index: 2;
   transition: background-color 0.3s ease;
 }
