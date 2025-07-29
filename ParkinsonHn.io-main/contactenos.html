@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Parkinson Honduras</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="main-content">
+    <header>
+        <section>
+            <img src="Imagenes/Logo.jpg" alt="Logo">
+            <h1>ASHPARK</h1>
+        </section>
+        <nav>
+            <ul>
+                <li><a href="Index.html">Inicio</a></li>
+                <li><a href="acercadenosotros.html">Acerca de Nosotros</a></li>
+                <li><a href="programas.html">Nuestros Programas</a></li>
+                <li><a href="ayuda.html">Cómo Ayudar</a></li>
+                <li><a href="Galeria.html">Galería de Fotos</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="eventos.html">Eventos</a></li>
+                <li><a href="contactenos.html">Contáctenos</a></li>
+                <li><a href="donaciones.html">Página de Donaciones</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="header"></div>
+    <section class="container contacto-formulario">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="titulo-seccion">Contáctenos</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 offset-3">
+                <form action="contactenos.html">
+                    <label for="txtNombre">Nombre completo:</label>
+                    <input id="txtNombre" name="nombre" placeholder="Juan Pérez García" required="" type="text" />
+                    <label for="txtEmail">Correo electrónico:</label>
+                    <input id="txtEmail" name="email" placeholder="juanG@gmail.com" required="" type="email" />
+                    <label for="txtTelefono">Teléfono</label>
+                    <input id="txtTelefono" name="telefono" placeholder="9876-5432" required="" type="tel" />
+                    <label for="interes">Motivo</label>
+                    <select id="Motivo" name="Motivo">
+                        <option value="consulta">Consulta general</option>
+                        <option value="donacion">Donación</option>
+                        <option value="voluntario">Voluntariado</option>
+                        <option value="parkinson">Síntomas del Parkinson</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    <label for="txtMensaje">Mensaje:</label>
+                    <textarea id="txtMensaje" maxlength="1024" name="mensaje" placeholder="Escriba su mensaje"
+                        required="" rows="8"></textarea>
+                    <div class="error" id="errorContainer"></div>
+                    <button type="submit">Enviar Mensaje</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            Promise.all([
+                fetch("header.html").then(res => res.text()),
+                fetch("footer.html").then(res => res.text())
+            ])
+                .then(([headerContent, footerContent]) => {
+                    document.getElementById("header").innerHTML = headerContent;
+                    document.getElementById("footer").innerHTML = footerContent;
+                })
+                .catch(err => console.error("Error al cargar header o footer:", err));
+        });
+    </script>
+    <script src="/js/componente.js"></script>
+
+</html>
+<footer class="footer">
+  <p>&copy;ASHPARK Todos los derechos reservados.</p>
+</footer>
+</body>
+</html>
